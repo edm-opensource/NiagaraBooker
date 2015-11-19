@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="edm_opensource.niagarabooker.BookRoomFragment">
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="75dip"
+        android:id="@+id/spinnerRooms"
+        android:entries="@array/rooms"
+        android:prompt="@string/rooms_prompt"
+        />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="75dip"
+        android:id="@+id/spinnerTimes"
+        android:entries="@array/times"
+        android:prompt="@string/times_prompt"
+        />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="75dip"
+        android:id="@+id/spinnerDates"
+        android:prompt="@string/dates_prompt"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/book"/>
+
+
+</LinearLayout>

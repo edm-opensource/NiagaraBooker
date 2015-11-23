@@ -90,7 +90,9 @@ public class MainActivity extends ActionBarActivity implements CustomClickListen
             new BookRoomTask().execute();
 
         } else if (id == R.id.action_reset_user) {
-
+            NewUserDialog newUserDialog = new NewUserDialog();
+            newUserDialog.setListener(this);
+            newUserDialog.show(getFragmentManager(), "NewUserDialog");
         } else if (id == R.id.action_update) {
             new BookingsTask().execute();
         }

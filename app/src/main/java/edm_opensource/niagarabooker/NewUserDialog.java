@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 /**
  * Created by mattiaspernhult on 2015-11-19.
@@ -34,6 +35,7 @@ public class NewUserDialog extends DialogFragment {
                         EditText username = (EditText) view.findViewById(R.id.username);
                         EditText password = (EditText) view.findViewById(R.id.password);
                         if (listener != null) {
+                            Toast.makeText(getActivity(), "Your credentials is now updated.", Toast.LENGTH_LONG).show();
                             listener.onClick(true, username.getText().toString().trim(), password.getText().toString().trim());
                         }
                     }
@@ -42,6 +44,7 @@ public class NewUserDialog extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         NewUserDialog.this.getDialog().cancel();
+                        Toast.makeText(getActivity(), "Your credentials was not updated.", Toast.LENGTH_LONG).show();
                     }
                 });
         return builder.create();

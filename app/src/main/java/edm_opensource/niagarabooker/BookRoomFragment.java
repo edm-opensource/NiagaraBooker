@@ -79,12 +79,20 @@ public class BookRoomFragment extends Fragment {
         }
     }
 
+    private String firstLetterToUppercase(String value) {
+        String first = String.valueOf(value.charAt(0)).toUpperCase();
+        StringBuilder builder = new StringBuilder(value);
+        builder.replace(0,1,first);
+        return builder.toString();
+    }
+
     private List<String> getDates() {
         List<String> dates = new ArrayList<>();
         Calendar calendar = new GregorianCalendar();
         DateFormat dateFormat = new SimpleDateFormat("EEEEEEEEE, d MMMMMMMMMMM yyyy");
         for (int i = 0; i < 14; i++) {
-            dates.add(i, dateFormat.format(calendar.getTime()));
+            String date = dateFormat.format(calendar.getTime());
+            dates.add(i, firstLetterToUppercase(date));
             calendar.add(Calendar.DAY_OF_MONTH, 1);
         }
         return dates;

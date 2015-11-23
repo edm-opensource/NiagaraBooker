@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class Controller {
 
-    private String titles[] = {"BOOK ROOM", "BOOKINGS"};
+    private String titles[] = new String[2];
 
     private ViewPagerAdapter adapter;
     private MainActivity mainActivity;
@@ -32,34 +32,8 @@ public class Controller {
     public Controller(FragmentManager fm, MainActivity mainActivity) {
         this.adapter = new ViewPagerAdapter(fm);
         this.mainActivity = mainActivity;
-    }
-
-    public byte[] hashPassword(String originalPassword) {
-        byte[] secret = Credentials.secretKey.getBytes();
-        byte[] password = Base64.decode(originalPassword, Base64.DEFAULT);
-        return xor(password, secret);
-    }
-
-    public String getPassword(byte[] password) {
-        byte[] secret = Credentials.secretKey.getBytes();
-        String originalPassword = Base64.encodeToString(xor(password, secret), Base64.DEFAULT);
-        return originalPassword;
-    }
-
-    private byte[] xor(final byte[] input, final byte[] secret) {
-        final byte[] output = new byte[input.length];
-        if (secret.length == 0) {
-            throw new IllegalArgumentException("empty security key");
-        }
-        int spos = 0;
-        for (int pos = 0; pos < input.length; ++pos) {
-            output[pos] = (byte) (input[pos] ^ secret[spos]);
-            ++spos;
-            if (spos >= secret.length) {
-                spos = 0;
-            }
-        }
-        return output;
+        titles[0] = mainActivity.getResources().getString(R.string.book_room);
+        titles[1] = mainActivity.getResources().getString(R.string.bookings);
     }
 
     public String postBookings(BookingModel booking, String credentialsString) {

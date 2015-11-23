@@ -82,16 +82,7 @@ public class MainActivity extends ActionBarActivity implements CustomClickListen
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.action_settings) {
-            /*
-            byte[] password = SharedPref.getPassword(this);
-            Log.d("MainActivity", Base64.encodeToString(password, Base64.DEFAULT));
-            Log.d("MainActivity", controller.getPassword(password));
-            */
-
-            new BookRoomTask().execute();
-
-        } else if (id == R.id.action_reset_user) {
+        if (id == R.id.action_reset_user) {
             NewUserDialog newUserDialog = new NewUserDialog();
             newUserDialog.setListener(this);
             newUserDialog.show(getFragmentManager(), "NewUserDialog");
@@ -142,7 +133,7 @@ public class MainActivity extends ActionBarActivity implements CustomClickListen
 
             } else {
                 controller.updateBookings(bookings);
-                Toast.makeText(MainActivity.this, "Your bookings has been updated", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, R.string.successful_booking, Toast.LENGTH_LONG).show();
             }
             progressBar.setVisibility(ProgressBar.INVISIBLE);
             controller.changeStateOfBookButton();
@@ -157,7 +148,7 @@ public class MainActivity extends ActionBarActivity implements CustomClickListen
             BookingModel booking = bookingModels[0];
             String credentials = SharedPref.getUserCredentials(MainActivity.this);
             if (credentials == null) {
-                return "You must set username and password to book a room.";
+                return getString(R.string.set_credentials_to_book);
             }
             return controller.postBookings(booking, credentials);
         }

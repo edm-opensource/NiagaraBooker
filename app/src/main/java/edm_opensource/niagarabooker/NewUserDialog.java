@@ -35,7 +35,7 @@ public class NewUserDialog extends DialogFragment {
                         EditText username = (EditText) view.findViewById(R.id.username);
                         EditText password = (EditText) view.findViewById(R.id.password);
                         if (listener != null) {
-                            Toast.makeText(getActivity(), "Your credentials is now updated.", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), R.string.credentials_updated, Toast.LENGTH_LONG).show();
                             listener.onClick(true, username.getText().toString().trim(), password.getText().toString().trim());
                         }
                     }
@@ -44,7 +44,7 @@ public class NewUserDialog extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         NewUserDialog.this.getDialog().cancel();
-                        Toast.makeText(getActivity(), "Your credentials was not updated.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), R.string.credentials_not_updated, Toast.LENGTH_LONG).show();
                     }
                 });
         return builder.create();

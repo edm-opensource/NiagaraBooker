@@ -11,7 +11,6 @@
         android:layout_height="75dip"
         android:id="@+id/spinnerRooms"
         android:entries="@array/rooms"
-        android:prompt="@string/rooms_prompt"
         />
 
     <Spinner
@@ -19,14 +18,12 @@
         android:layout_height="75dip"
         android:id="@+id/spinnerTimes"
         android:entries="@array/times"
-        android:prompt="@string/times_prompt"
         />
 
     <Spinner
         android:layout_width="match_parent"
         android:layout_height="75dip"
         android:id="@+id/spinnerDates"
-        android:prompt="@string/dates_prompt"
         />
 
     <Button

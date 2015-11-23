@@ -47,9 +47,11 @@ public class BookingsFragment extends Fragment {
 
         List<BookingModel> bookings = new ArrayList<>();
 
+        /*
         bookings.add(bookingModel1);
         bookings.add(bookingModel2);
         bookings.add(bookingModel3);
+        */
 
         adapter = new RecyclerViewAdapter(bookings);
         recyclerView.setAdapter(adapter);

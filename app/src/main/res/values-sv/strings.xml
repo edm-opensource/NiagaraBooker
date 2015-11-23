@@ -1,20 +1,21 @@
 <resources>
     <string name="app_name">NiagaraBooker</string>
 
-    <string name="book_room">BOOK ROOM</string>
-    <string name="bookings">BOOKINGS</string>
+    <string name="book_room">BOKA RUM</string>
+    <string name="bookings">BOKNINGAR</string>
 
-    <string name="book">Book</string>
-    <string name="new_user">New user credentials</string>
-    <string name="username">Username</string>
-    <string name="password">Password</string>
-    <string name="save">SAVE</string>
-    <string name="cancel">CANCEL</string>
-    <string name="action_reset_user">Change user credentials</string>
-    <string name="successful_booking">Your bookings has been updated</string>
-    <string name="set_credentials_to_book">You must set username and password to book a room</string>
-    <string name="credentials_updated">Your credentials is now updated</string>
-    <string name="credentials_not_updated">Your credentials was not updated</string>
+    <string name="book">Boka</string>
+    <string name="new_user">Nya inloggningsuppgifter</string>
+    <string name="username">Användarnamn</string>
+    <string name="password">Lösenord</string>
+    <string name="save">SPARA</string>
+    <string name="cancel">AVBRYT</string>
+    <string name="action_reset_user">Ändra inloggningsuppgifter</string>
+
+    <string name="successful_booking">Dina bokningar har uppdateras</string>
+    <string name="set_credentials_to_book">Du måste lägga till inloggningsuppgifter för att boka ett rum.</string>
+    <string name="credentials_updated">Dina inloggningsuppgifter har uppdaterats</string>
+    <string name="credentials_not_updated">Dina inloggningsuppgifter uppdaterades inte</string>
 
     <string-array name="times">
         <item>08:15-10:00</item>

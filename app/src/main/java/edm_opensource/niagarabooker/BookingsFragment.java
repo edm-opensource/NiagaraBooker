@@ -14,8 +14,16 @@ import java.util.List;
 
 public class BookingsFragment extends Fragment {
 
+    private RecyclerViewAdapter adapter;
+
     public BookingsFragment() {
 
+    }
+
+    public void updateBookings(List<BookingModel> bookings) {
+        if (adapter != null) {
+            adapter.updateList(bookings);
+        }
     }
 
     @Override
@@ -37,7 +45,7 @@ public class BookingsFragment extends Fragment {
         bookings.add(bookingModel2);
         bookings.add(bookingModel3);
 
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(bookings);
+        adapter = new RecyclerViewAdapter(bookings);
         recyclerView.setAdapter(adapter);
 
         return v;

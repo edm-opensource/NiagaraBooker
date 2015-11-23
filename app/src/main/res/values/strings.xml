@@ -17,6 +17,7 @@
     <string name="password">Password</string>
     <string name="save">SAVE</string>
     <string name="cancel">CANCEL</string>
+    <string name="action_reset_user">Reset user credentials</string>
 
     <string-array name="times">
         <item>08:15-10:00</item>

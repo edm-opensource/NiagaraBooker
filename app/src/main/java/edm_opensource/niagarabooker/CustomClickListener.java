@@ -5,4 +5,5 @@ package edm_opensource.niagarabooker;
  */
 public interface CustomClickListener {
     void onClick(boolean save, String username, String password);
+    void onBook(BookingModel booking);
 }

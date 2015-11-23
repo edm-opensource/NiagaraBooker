@@ -99,8 +99,7 @@ public class Controller {
             webb.setDefaultHeader(Webb.HDR_AUTHORIZATION, auth);
             webb.setDefaultHeader("Content-Type", "application/json");
 
-            //webb.setBaseUri("https://mah-book-room-api.herokuapp.com");
-            webb.setBaseUri("http://192.168.43.203:3000");
+            webb.setBaseUri("https://mah-book-room-api.herokuapp.com");
 
             Response<JSONObject> response = webb
                     .get("/bookings")

@@ -47,6 +47,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return 0;
     }
 
+    public void addBooking(BookingModel booking) {
+        this.bookings.add(booking);
+        notifyDataSetChanged();
+    }
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private TextView tvRoom;
         private TextView tvDate;

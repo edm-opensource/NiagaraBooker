@@ -26,6 +26,12 @@ public class BookingsFragment extends Fragment {
         }
     }
 
+    public void addBooking(BookingModel bookingModel) {
+        if (adapter != null) {
+            adapter.addBooking(bookingModel);
+        }
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

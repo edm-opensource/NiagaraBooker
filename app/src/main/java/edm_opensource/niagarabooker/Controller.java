@@ -81,8 +81,22 @@ public class Controller {
                     .body("{\"date\": \"" + booking.getDate() + "\", \"time\" : \"" + time + "\", \"room\" : \"" + room + "\"}")
                     .asJsonObject();
 
-            if(response.isSuccess()){
-                return "Booking successful";
+            if(response.isSuccess()) {
+                JSONObject res = response.getBody();
+                String date = res.getString("date");
+                JSONObject embedded = res.getJSONObject("_embedded");
+                String roomJson = embedded.getJSONObject("room").getString("name");
+                String timeJson = embedded.getJSONObject("time").getString("name");
+                final BookingModel bookingModel = new BookingModel(date, room, time);
+                bookingModel.changeRoomToNormal();
+                bookingModel.changeTimeToNormal();
+                mainActivity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        bookingsFragment.addBooking(bookingModel);
+                    }
+                });
+                return "Booking was successful";
             } else {
                 JSONObject error = new JSONObject(response.getErrorBody().toString());
                 int statusCode = error.getInt("status");

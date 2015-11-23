@@ -1,5 +1,7 @@
 package edm_opensource.niagarabooker;
 
+import android.util.Log;
+
 /**
  * Created by mattiaspernhult on 2015-11-19.
  */
@@ -28,6 +30,28 @@ public class BookingModel {
 
     public String getTime() {
         return time;
+    }
+
+    public void changeTimeToNormal() {
+        if (this.time.contains("-") && this.time.contains(":")) {
+            return;
+        }
+        StringBuilder builder = new StringBuilder(this.time);
+        builder.insert(2, ':');
+        builder.insert(5, '-');
+        builder.insert(8, ':');
+        Log.d("MainActivity", builder.toString());
+        this.time = builder.toString();
+    }
+
+    public void changeRoomToNormal() {
+        if (this.room.contains(":")) {
+            return;
+        }
+        StringBuilder builder = new StringBuilder(this.room);
+        builder.insert(2, ':');
+        Log.d("MainActivity", builder.toString().toUpperCase());
+        this.room = builder.toString().toUpperCase();
     }
 
     public String getDateAsPost() {

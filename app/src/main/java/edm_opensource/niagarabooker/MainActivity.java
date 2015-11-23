@@ -35,6 +35,8 @@ public class MainActivity extends ActionBarActivity implements CustomClickListen
         initTabs();
 
         checkIfUserIsRegistered();
+
+        new BookingsTask().execute();
     }
 
     private void checkIfUserIsRegistered() {

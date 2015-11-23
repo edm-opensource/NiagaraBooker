@@ -46,6 +46,7 @@ public class BookRoomFragment extends Fragment {
         times = (Spinner) v.findViewById(R.id.spinnerTimes);
         dates = (Spinner) v.findViewById(R.id.spinnerDates);
         btnBook = (Button) v.findViewById(R.id.btnBook);
+        btnBook.setEnabled(false);
 
         btnBook.setOnClickListener(new View.OnClickListener() {
             @Override

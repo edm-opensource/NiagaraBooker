@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NiagaraBooker</string>
+    <string name="app_name">Niagara Booker</string>
 
     <string name="book_room">BOOK ROOM</string>
     <string name="bookings">BOOKINGS</string>
@@ -15,6 +15,7 @@
     <string name="set_credentials_to_book">You must set username and password to book a room</string>
     <string name="credentials_updated">Your credentials is now updated</string>
     <string name="credentials_not_updated">Your credentials was not updated</string>
+    <string name="internet_app_use">In order to use this app, the device must have a internet connection</string>
 
     <string-array name="times">
         <item>08:15-10:00</item>

@@ -46,7 +46,6 @@ public class BookRoomFragment extends Fragment {
         times = (Spinner) v.findViewById(R.id.spinnerTimes);
         dates = (Spinner) v.findViewById(R.id.spinnerDates);
         btnBook = (Button) v.findViewById(R.id.btnBook);
-        btnBook.setEnabled(false);
 
         btnBook.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +61,7 @@ public class BookRoomFragment extends Fragment {
             }
         });
 
-        dates.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_item, getDates()));
+        dates.setAdapter(new ArrayAdapter<>(getContext(), android.R.layout.simple_spinner_dropdown_item, getDates()));
 
         return v;
     }
